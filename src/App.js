@@ -4,13 +4,13 @@ import React from 'react';
 import { withAuthenticator } from 'aws-amplify-react'
 import { API, graphqlOperation } from 'aws-amplify'
 // import uuid to create a unique client ID
-import uuid from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid';
 
 import { listTalks as ListTalks } from './graphql/queries'
 // import the mutation
 import { createTalk as CreateTalk } from './graphql/mutations'
 
-const CLIENT_ID = uuid()
+const CLIENT_ID = uuidv4()
 
 class App extends React.Component {
   // define some state to hold the data returned from the API

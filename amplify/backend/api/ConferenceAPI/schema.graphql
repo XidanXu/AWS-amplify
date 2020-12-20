@@ -1,11 +1,4 @@
-type Talk
-  @model
-  @auth(
-    rules: [
-      { allow: groups, groups: ["Admin"] }
-      { allow: private, operations: [read] }
-    ]
-  ) {
+type Talk @model {
   id: ID!
   clientId: ID
   name: String!
